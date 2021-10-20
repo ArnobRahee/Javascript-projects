@@ -1,0 +1,174 @@
+*, *::after, ::before{
+    box-sizing:border-box;
+}
+:root{
+    --cell-size:100px;
+    --mark-size:calc(var(--cell-size)*.9);
+}
+body{
+    margin:0;
+    max-width:100%;
+}
+
+.board{
+    width:100vw;
+    height:60vh;
+    display:grid;
+    justify-content:center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns:repeat(3,auto);
+}
+.cell.x,
+.cell.circle{
+    cursor:not-allowed;
+}
+.cell{
+    width:var(--cell-size);
+    height:var(--cell-size);
+    position:relative;
+    border:1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+}
+.board.x .cell:not(.x):not(.circle):hover::after,
+.board.x .cell:not(.x):not(.circle):hover::before{
+    content: '';
+    position:absolute;
+    width:calc(var(--mark-size)*.15);
+    height:var(--mark-size);
+    background-color: rgb(136, 135, 135);
+
+}
+.board.x .cell:not(.x):not(.circle):hover::before{
+    transform:rotate(47deg);
+}
+
+.board.x .cell:not(.x):not(.circle):hover::after{
+    transform:rotate(-47deg);
+}
+.board.circle .cell:not(.x):not(.circle):hover::after,
+.board.circle .cell:not(.x):not(.circle):hover::before{
+    content: '';
+    position:absolute;
+    width:var(--mark-size);
+    height:var(--mark-size);
+    background-color:white;
+
+    border-radius:50%;
+}
+.board.circle .cell:not(.x):not(.circle):hover::before{
+    width:calc(var(--mark-size));
+    height:calc(var(--mark-size));
+    background-color: rgb(136, 135, 135);;
+}
+
+.board.circle .cell:not(.x):not(.circle):hover::after{
+    width:calc(var(--mark-size)*.7);
+    height:calc(var(--mark-size)*.7);
+    background-color: white;
+}
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3){
+    border-top:none;
+ 
+}
+.cell:nth-child(3n+1){
+    border-left:none;
+}
+.cell:nth-child(3n+3){
+    border-right:none;
+}
+.cell:nth-child(n+7){
+    border-bottom:none;
+}
+.cell.x::before,
+.cell.x::after{
+    content: '';
+    position:absolute;
+    width:calc(var(--mark-size)*.15);
+    height:var(--mark-size);
+    background-color: black;
+}
+.cell.x::before{
+   transform:rotate(47deg);
+}
+.cell.x::after{
+    transform:rotate(-47deg);
+ }
+
+ 
+.cell.circle::before,
+.cell.circle::after{
+    content: '';
+    position:absolute;
+    width:var(--mark-size);
+    height:var(--mark-size);
+    background-color:black;
+
+    border-radius:50%;
+}
+.cell.circle::after{
+    width:calc(var(--mark-size)*.7);
+    height:calc(var(--mark-size)*.7);
+    background-color: white;
+}
+.winning-message{
+    display: none;
+    position:fixed;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    background-color: rgba(0,0,0,0.9);
+   
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    font-size:5rem;
+    z-index: 10;
+}
+.winning-message button{
+    font-size: 3.5rem;
+    background-color: white;
+    border: 1px solid black;
+    cursor:pointer;
+    border-radius:10px;
+}
+.winning-message button:hover{
+    background-color: black;
+    color:white;
+    border:1px solid white;
+}
+.winning-message.show{
+    display: flex;
+    flex-direction: column;
+}
+.resign{
+    padding-top: 8%;
+    padding-left: 4rem;
+    
+}
+.r{
+    font-size: 3.5rem;
+    cursor: pointer;
+    background-color: white;
+    padding:1rem 2.5rem 1rem 2.5rem;
+    border-radius: 2rem;
+    
+    border:0.5rem solid rgb(39, 221, 130);
+    box-shadow:5rem #888888;
+
+    
+}
+.r:hover{
+    color:white;
+    border:0.5rem solid rgb(173, 171, 171);
+    transition:0.5s;
+    background-color:rgb(39, 221, 130) ;
+}
