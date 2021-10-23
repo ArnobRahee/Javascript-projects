@@ -1,6 +1,9 @@
 *, *::after, ::before{
     box-sizing:border-box;
 }
+.score{
+    display:flex;
+}
 :root{
     --cell-size:100px;
     --mark-size:calc(var(--cell-size)*.9);

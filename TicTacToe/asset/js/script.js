@@ -1,4 +1,5 @@
-
+var r=document.getElementById('resign')
+r.addEventListener('click', resign)
 const cellElements=document.querySelectorAll('[data-cell]')
 const board=document.getElementById('board')
 let circleTurn
@@ -6,6 +7,12 @@ const X_CLASS='x'
 const winningmsg=document.querySelector('[data-winning-message-text]')
 const  winningMsgElement=document.getElementById('winning-message')
 const CIRCLE_CLASS='circle'
+let scoreX=0
+let scoreO=0
+
+document.write(scoreX)
+
+scoreO.innerHTML=0
 const Winning_Combination=[
    [0,1,2],
    [3,4,5],
@@ -19,6 +26,8 @@ const Winning_Combination=[
 ]
 startGame()
 function startGame(){
+   document.getElementById('scoreX').innerHTML=scoreX.toString()
+document.getElementById('scoreO').innerHTML=scoreO.toString()
 circleTurn=true
 cellElements.forEach(cell =>{
    cell.removeEventListener('click', handleClick,{once: true})
@@ -54,8 +63,16 @@ function draw(){
 function endgame(draw){
    if(draw){
       winningmsg.innerText='Draw!'
+      scoreX+=0.5
+      scoreO+=0.5
    }else{
       winningmsg.innerText=`${circleTurn ? "X's" : "O's"} Wins!`
+      if(circleTurn){
+         scoreX+=1
+         console.log(scoreX)
+      }else{
+         scoreO+=1
+      }
    }
    winningMsgElement.classList.add('show')
 }
@@ -91,5 +108,12 @@ function restart(){
 }
 function resign(){
    winningmsg.innerText=`${circleTurn ? "O's" : "X's"} Wins!`
+   if(circleTurn){
+     
+      scoreO+=1
+      console.log(scoreX)
+   }else{
+      scoreX+=1
+   }
    winningMsgElement.classList.add('show')
 }
