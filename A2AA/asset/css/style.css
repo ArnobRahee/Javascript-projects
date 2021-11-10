@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300;400;600;700&display=swap');
+*{
+  
+    font-family: "Encode Sans Expanded",sans-serif;
+   
+
+}
+body{
+  background-color: #0C0C0C;
+  color: white;
+}
+.link {
+  display: block;
+  padding: 0.5rem 1rem;
+ color: #FFFFFF;
+  text-decoration: none;
+  transition: color .15s ease-in-out;
+}
+.link:hover{
+  color: #00BB6F;
+}
+.logo{
+  height: 35px;
+ 
+}
+.list{
+  background-color: #1F1F1F;
+}
+.items{
+  cursor: pointer;
+  padding-top: 10px;
+  padding-bottom: 10px;
+ padding-left: 20px;
+ background-color: rgb(31, 31, 31); 
+ color: rgb(255, 255, 255);
+}
+.items:hover{
+  color:aqua;
+  transition: color .15s ease-in-out;
+}
+.cloth{
+  padding-left:20px;
+  padding-right: 200px;
+  margin-bottom: 40px;
+  margin-top: 2opx;
+  margin-right: 20px;
+}
+.table100.ver3 th {
+  font-family: Lato-Bold;
+  font-size: 15px;
+  color: #01bf71;
+  line-height: 1.4;
+  text-transform: uppercase;
+  background-color: #393939;
+}
+.table100.ver3 th {
+  font-family: Lato-Bold;
+  font-size: 15px;
+  color: #01bf71;
+  line-height: 1.4;
+  text-transform: uppercase;
+  background-color: #393939;
+}
+.table100-head th {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+td, th {
+  font-weight: unset;
+  padding-right: 10px;
+}
+.column5{
+  width:3%;
+}
+.column3 {
+  width: 23%;
+}
+.column1 {
+  width: 33%;
+  padding-left: 40px;
+}
+th {
+  /* text-align: inherit; */
+  text-align: -webkit-match-parent;
+}
+.cell100{
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+
+  
+.footer{
+  background-color: #010606;
+}
+.head-list{
+  font-weight: 500;;
+}
+.wrap-table100{
+  background-color: #1D1D1D;
+  border-radius: 20px;
+}
+
+
+tr:hover{
+  color: #01bf71;
+  cursor: pointer;
+ 
+  transition: color .15s ease-in-out;
+}
+tr{
+  font:'lato';
+  font-weight: 400;
+  font-size: 15px;
+  color: #808080;
+  border-radius: 20px;
+
+}
+td{
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.list-items{
+  font-weight: 400;
+  font-size: 14px;
+}
+.footer{
+  padding-top: 60px;
+}
+.a2{
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 400;
+}
+.list-items{
+  padding-top: 12px;
+  cursor: pointer;
+}
+.list-items:hover{
+  color: #01bf71;
+  transition: color .15s ease-in-out;
+}
+.copyright{
+  font-size:16px;
+  font-weight: 400;
+}
